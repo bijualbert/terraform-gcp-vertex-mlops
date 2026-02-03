@@ -52,14 +52,8 @@ terraform-gcp-secure-infra/
 
 ---
 
-## 📁 Repository Structure
+## 📁 Deployment command
 ```
-terraform-gcp-vertex-mlops/
-├── README.md
-
-## Architecture Diagram
-
-GitHub PR
 terraform apply
 ```
 -------------------+
@@ -293,43 +287,8 @@ The platform delivered consistent, auditable ML deployments, prevented insecure 
 ### One-line summary
 > "design of ML platforms the same way banks design financial systems: policy-driven, auditable, automated, and resilient by default."
 
-## Architecture Diagram
-             GitHub PR
-                |
-                v
-        +----------------+
-        |  GitHub Actions|
-        |  - fmt         |
-        |  - validate    |
-        |  - plan        |
-        +----------------+
-                |
-                v
-        +----------------+
-        | Conftest (OPA) |
-        | Policy Checks |
-        +----------------+
-                |
-                v
-        +----------------------+
-        | Terraform Apply      |
-        | (Remote State: GCS)  |
-        +----------------------+
-                |
-   ---------------------------------
-   |                               |
-   v                               v
-+-----------+             +-------------------+
-| GCS       |             | Vertex AI         |
-| Buckets   |             | - Model Registry  |
-| (Secure)  |             | - Pipelines       |
-+-----------+             | - Endpoints       |
-                          +-------------------+
-                                     |
-                                     v
-                            Production Predictions
-
-| WF Expectation           | Your Exact Mapping                                 |
+## Expectation Vs Mapping
+|   Expectation           |  Exact Mapping                                     |
 |-------------------------|----------------------------------------------------|
 | Secure Cloud Infrastructure | Terraform + GCP + remote state                  |
 | Policy & Compliance         | OPA policies blocking non-compliant infra       |
