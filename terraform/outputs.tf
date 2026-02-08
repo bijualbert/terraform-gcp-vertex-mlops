@@ -1,12 +1,4 @@
-output "bucket_name" {
-  description = "Name of the GCS bucket created"
-  value       = module.secure_bucket.bucket_name
-}
 
-output "bucket_location" {
-  description = "Region of the GCS bucket"
-  value       = module.secure_bucket.bucket_location
-}
 
 output "vertex_ai_endpoint_id" {
   description = "Vertex AI endpoint ID"
