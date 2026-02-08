@@ -1,7 +1,7 @@
 resource "google_vertex_ai_endpoint" "endpoint" {
-  name     = var.endpoint_name
-  location = var.region
-  project  = var.project_id
+  display_name = var.endpoint_name
+  location     = var.region
+  project      = var.project_id
 }
 
 resource "google_vertex_ai_model" "model" {
