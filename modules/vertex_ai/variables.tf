@@ -7,3 +7,8 @@ variable "labels" {
     cost_center = "mlops"
   }
 }
+variable "project_id" {
+  description = "GCP project ID"
+  type        = string
+  default     = "your-gcp-project-id"
+}
