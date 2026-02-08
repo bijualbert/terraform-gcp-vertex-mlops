@@ -5,5 +5,11 @@ variable "region" {
 variable "bucket_name" {}
 
 variable "labels" {
-  type = map(string)
+  description = "Common labels applied to all resources"
+  type        = map(string)
+  default = {
+    owner       = "bijualbert"
+    env         = "dev"
+    cost_center = "mlops"
+  }
 }
