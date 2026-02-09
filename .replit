@@ -28,3 +28,6 @@ args = "bash scripts/validate.sh"
 
 [workflows.workflow.metadata]
 outputType = "console"
+
+[deployment]
+deploymentTarget = "cloudrun"
