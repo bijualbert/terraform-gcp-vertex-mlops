@@ -1,0 +1,30 @@
+modules = ["bash"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["opentofu", "conftest"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Validate Terraform"
+
+[[workflows.workflow]]
+name = "Validate Terraform"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash scripts/validate.sh"
+
+[workflows.workflow.metadata]
+outputType = "console"
