@@ -1,0 +1,86 @@
+~/workspace$ git pull --rebase origin main
+From https://github.com/bijualbert/terraform-gcp-vertex-mlops
+ * branch            main       -> FETCH_HEAD
+Current branch main is up to date.
+~/workspace$ git push origin main
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (29/29), 198.23 KiB | 24.78 MiB/s, done.
+Total 29 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (10/10), completed with 6 local objects.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— Google Cloud Service Account Credentials ——————————
+remote:        locations:
+remote:          - commit: 8618c8b2630d2de5ec5033c5ec52026c1b64cf88
+remote:            path: attached_assets/Pasted--type-service-account-project-id-neon-glyph-232523-priv_1770616812931.txt:1
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/bijualbert/terraform-gcp-vertex-mlops/security/secret-scanning/unblock-secret/39Q9NbSCSm4MyjFWKh3tiFUfQrt
+remote:     
+remote: 
+remote: 
+To https://github.com/bijualbert/terraform-gcp-vertex-mlops
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/bijualbert/terraform-gcp-vertex-mlops'
+~/workspace$ git push --force origin main
+Enumerating objects: 41, done.
+Counting objects: 100% (41/41), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (29/29), done.
+Writing objects: 100% (29/29), 198.23 KiB | 28.32 MiB/s, done.
+Total 29 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (10/10), completed with 6 local objects.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— Google Cloud Service Account Credentials ——————————
+remote:        locations:
+remote:          - commit: 8618c8b2630d2de5ec5033c5ec52026c1b64cf88
+remote:            path: attached_assets/Pasted--type-service-account-project-id-neon-glyph-232523-priv_1770616812931.txt:1
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/bijualbert/terraform-gcp-vertex-mlops/security/secret-scanning/unblock-secret/39Q9NbSCSm4MyjFWKh3tiFUfQrt
+remote:     
+remote: 
+remote: 
+To https://github.com/bijualbert/terraform-gcp-vertex-mlops
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/bijualbert/terraform-gcp-vertex-mlops'
+~/workspace$ ^C
+~/workspace$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+~/workspace$ git log --oneline -5
+f0648df (HEAD -> main, gitsafe-backup/main) Update Vertex AI module to use existing Terraform resources
+8618c8b Add Google Cloud service account credentials for Terraform authentication
+9164143 Add configuration for local validation and set up project workflow
+f5d1691 Add validation script and documentation for Terraform project
+4bfb68e (grafted, origin/main, origin/HEAD) gcloud auth login has been removed from deploy_vertex_ai.sh.
+~/workspace$ 
